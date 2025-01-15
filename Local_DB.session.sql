@@ -1,2 +1,2 @@
 select * from contact;
-show tables;
+show tables

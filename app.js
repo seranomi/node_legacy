@@ -51,6 +51,22 @@ app.get('/contact', (req, res) => {
     res.render('contact');
 })
 
+app.get('/contactList', (req, res) => {
+    const selectQuery = `select * from contact order by id desc`;
+
+    // 얻어온 커넥션을 사용하여 쿼리를 실행합니다.
+    connectionPool.query(selectQuery, (err, result) => {
+        if (err) {
+            console.error('데이터 조회 중 에러 발생:', err);
+            res.status(500).send('내부 서버 오류');
+        } else {
+            console.log('데이터가 조회되었습니다.');
+            console.log(result);
+            res.render('contactList', {lists:result});
+        }
+    });
+});
+
 app.post('/api/contact', (req, res) => {
     const name = req.body.name;
     const phone = req.body.phone;
@@ -71,21 +87,37 @@ app.post('/api/contact', (req, res) => {
     })
 })
 
-app.get('/contactList', (req, res) => {
-    const selectQuery = `select * from contact order by id desc`;
-
-    // 얻어온 커넥션을 사용하여 쿼리를 실행합니다.
-    connectionPool.query(selectQuery, (err, result) => {
+app.post('/api/contactDelete/:id', (req, res) => {
+    const id = req.params.id;
+    const deleteQuery = `DELETE FROM contact WHERE id='${id}'`
+    connectionPool.query(deleteQuery, (err, result) => {
         if (err) {
-            console.error('데이터 조회 중 에러 발생:', err);
-            res.status(500).send('내부 서버 오류');
+            console.error('데이터 삭제 중 에러 발생: ', err);
+            res.status(500).send('내부 서버 오류')
         } else {
-            console.log('데이터가 조회되었습니다.');
+            console.log('데이터가 삭제 되었습니다.');
             console.log(result);
-            res.render('contactList', {lists:result});
+            res.send("<script> alert('문의사항이 삭제되었습니다.'); location.href='/contactList' </script>")
         }
-    });
-});
+    })
+})
+
+app.post('/api/contactUpdate/:id', (req, res) => {
+    const id = req.params.id;
+    const status = "done";
+    const updateQuery = `UPDATE contact SET status = '${status}' WHERE id = '${id}'`
+
+    connectionPool.query(updateQuery, (err, result) => {
+        if (err) {
+            console.error('데이터 수정 중 에러 발생: ', err);
+            res.status(500).send('내부 서버 오류')
+        } else {
+            console.log('데이터가 수정 되었습니다.');
+            console.log(result);
+            res.send("<script> alert('문의사항의 상태가 변경되었습니다.'); location.href='/contactList' </script>")
+        }
+    })
+})
 
 app.listen(port, () => {
     console.log(`Node Legacy App listening on port ${port}`)
