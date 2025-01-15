@@ -39,12 +39,12 @@ app.get('/', (req, res) => {
     res.render('index'); // .ejs생략가능
 })
 
-app.get('/blog', (req, res) => {
-    res.render('blog');
+app.get('/profile', (req, res) => {
+    res.render('profile');
 })
 
-app.get('/users', (req, res) => {
-    res.render('users');
+app.get('/life', (req, res) => {
+    res.render('life');
 })
 
 app.get('/contact', (req, res) => {
