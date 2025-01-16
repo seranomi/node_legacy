@@ -1,8 +1,4 @@
-<%-include('layouts/header.ejs')%>
-
-<h2>문의 목록입니다.</h2>
-
-<table border="1">
+<table class="table">
   <tr>
     <th>id</th>
     <th>name</th>
@@ -76,31 +72,4 @@
       },
     });
   }
-
-  async function fetchData() {
-    try {
-      const response = await fetch("/api/some-endpoint", {
-        method: "POST", // HTTP 메서드
-        headers: {
-          "Content-Type": "application/json", // 데이터 형식 지정
-        },
-        body: JSON.stringify({
-          // 전송할 데이터 (예: JSON 문자열)
-          key1: "value1",
-          key2: "value2",
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error("업데이트 오류"); // throw를 통해 catch절로 오류 객체 전달
-      }
-
-      const data = await response.json(); // 응답을 JSON으로 변환
-      console.log("성공:", data); // 성공 시 데이터 처리
-    } catch (error) {
-      console.error("에러:", error); // 오류 처리
-    }
-  }
 </script>
-
-<%-include('layouts/footer.ejs')%>

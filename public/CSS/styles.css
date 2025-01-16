@@ -19,13 +19,22 @@ h4 {
   font-weight: 400;
   margin-bottom: 30px;
 }
+.profile-item {
+  margin-bottom: 10px;
+  font-size: 19px;
+}
+
+.profile-item .label {
+  font-weight: bold;
+  color: #333; /* 레이블 색상 */
+}
 
 .jumbotron {
-  background-image: linear-gradient(to bottom right, #6CB4EE, #00009C);
-  /* background-color: #4374fb; */
+  background-image: linear-gradient(to bottom right, #8469c3, #4374fb);
+  background-size: cover;
   color: #fff;
-  padding: 100px 25px;
-  font-family: Montserrat, sans-serif;
+  padding: 120px 25px 100px 25px;
+  font-family: Arial, sans-serif;
 }
 
 .container-fluid {
@@ -142,6 +151,11 @@ h4 {
   font-family: Arial, sans-serif;
 }
 
+.table {
+  border: 1px;
+  border-collapse: collapse;
+}
+
 .navbar li a,
 .navbar .navbar-brand {
   color: #fff !important;
@@ -173,6 +187,13 @@ footer .glyphicon {
   animation-duration: 1s;
   -webkit-animation-duration: 1s;
   visibility: visible;
+}
+
+#like {
+  padding: 50px 20%;
+}
+#profile {
+  padding: 50px 20%;
 }
 
 @keyframes slide {
@@ -211,5 +232,184 @@ footer .glyphicon {
 @media screen and (max-width: 480px) {
   .logo {
     font-size: 150px;
+  }
+}
+
+/* CONTACT CSS*/
+/* 폼 전체 스타일 */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 제목 스타일 */
+.contact-form h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* 목록 스타일 초기화 */
+.contact-form ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 각 항목 스타일 */
+.contact-form li {
+  margin-bottom: 15px;
+}
+
+/* 라벨 스타일 */
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* 입력 필드 스타일 */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* 입력 필드 포커스 스타일 */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #4374fb;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+/* 텍스트 영역 크기 조정 */
+.contact-form textarea {
+  resize: vertical;
+}
+
+/* 버튼 스타일 */
+.contact-form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4374fb;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* 버튼 호버 효과 */
+.contact-form button:hover {
+  background-color: #4374fb;
+}
+
+/* CONTACT LIST */
+/* 테이블 컨테이너 스타일 */
+.table {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* 테이블 제목 스타일 */
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* 테이블 헤더 스타일 */
+.table th {
+  background-color: #4374fb;
+  color: white;
+  padding: 10px 15px;
+  text-align: left;
+  font-weight: bold;
+}
+
+/* 테이블 본문 스타일 */
+.table td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+/* 테이블 행 스타일 */
+.table tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+/* 행 hover 효과 */
+.table tr:hover {
+  background-color: #e9f7ff;
+}
+
+/* 버튼 스타일 */
+.table button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+/* UPDATE 버튼 스타일 */
+.table button[onclick^="updateContact"] {
+  background-color: #3cb371;
+  color: white;
+}
+
+.table button[onclick^="updateContact"]:hover {
+  background-color: #3cb371;
+}
+
+/* DELETE 버튼 스타일 */
+.table button[onclick^="deleteContact"] {
+  background-color: #fb4343;
+  color: white;
+}
+
+.table button[onclick^="deleteContact"]:hover {
+  background-color: #fb4343;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .table th,
+  .table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .table button {
+    font-size: 12px;
+    padding: 5px 8px;
   }
 }
