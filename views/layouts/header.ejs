@@ -1,19 +1,84 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
+    	jQuery 추가 
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h1> 저의 홈페이지</h1>
     <header style="border-bottom: 1px solid lightgray; margin-bottom: 10px; padding-bottom: 10px;">
-        <nav>
-            <a href="/">홈</a>
-            <a href="/profile">프로필</a>
-            <a href="/visit">찾아오시는길</a>
-            <a href="/blog">블로그</a>
-            <a href="/users">회원</a>
-            <a href="/contact">문의하기</a>
-        </nav>
-    </header>
+        <div>
+            <nav>
+                <a href="/">HOME</a>
+                <a href="/profile">Profile</a>
+                <a href="/life">Life</a>
+                <a href="/contact">Contact</a>
+                <a href="/contactList">ContactList</a>
+            </nav>
+        </div>
+        <div class="container">
+            <div class="post">
+                <h2>Welcome to My Blog!</h2>
+                <p>This is where I share my thoughts, ideas, and inspirations. Stay tuned for more content!</p>
+            </div>
+        </div>
+    </header>-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>안녕하세요 이범찬입니다!</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </head>
+  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle"
+            data-toggle="collapse"
+            data-target="#myNavbar"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">HOME</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#profile">PROFILE</a></li>
+            <li><a href="#like">LIKE</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="#contactList">CONTACT LIST</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="jumbotron text-center">
+      <h1>안녕하세요 이범찬입니다!</h1>
+    </div>
+  </body>
+</html>
