@@ -12,7 +12,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use('/', router);
 
-
 // Server listner
 app.listen(port, () => {
   console.log(`Node Legacy App listening on port ${port}`);
